@@ -40,8 +40,15 @@ async function serverData ({
   /** Cuando se obtiene una respuesta positiva del server se crean dos botones ( btn3D y btnAR ) */
   function createBtns({father,sku,idCompany,link3D,color,zBtns,zModal,ButtonsY}){
   
+    if(window.innerWidth > 1100){
+      father = document.querySelector('div.w-100.border-box.vtex-store-components-3-x-carouselGaleryCursor.ml-20-ns.w-80-ns.pl5-ns')
+    }else if( window.innerWidth >500 && window.innerWidth < 1100){
+      father = document.querySelector('.vtex-store-components-3-x-carouselGaleryCursor');
+    }else if( window.innerWidth <500){
+      father = document.querySelector('.vtex-store-components-3-x-carouselGaleryCursor');
+    };
+
     const fatherContainer = father;
-    fatherContainer.setAttribute('style','position:relative')
   
     // Creación del contenedor principal para los botones
     const containerPrincipalBtns = document.createElement('DIV');
@@ -58,7 +65,20 @@ async function serverData ({
     
     containerPrincipalBtns.querySelector('.btnMudi3D').addEventListener('click',()=>{ createModal3D({link3D:link3D,color:color,zModal:zModal}) },false);
     containerPrincipalBtns.querySelector('.btnMudiAR').addEventListener('click',()=>{ createModalAR({color:color, idCompany:idCompany, sku:sku,zModal:zModal}) },false);
-    fatherContainer.appendChild(containerPrincipalBtns);
+  
+    if(window.innerWidth > 1100){
+      fatherContainer.appendChild(containerPrincipalBtns);
+    }else if( window.innerWidth >500 && window.innerWidth < 1100){
+      console.log('tablet')
+      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
+      fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
+    }else if( window.innerWidth <500){
+      console.log('mobile')
+      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
+      fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
+    };
+
+    
   
     setTimeout(()=>{
       const tool = document.querySelector('.showTooltipInit');
@@ -250,3 +270,11 @@ async function serverData ({
     createBtns({ father:containerBtns, sku:skuNumber, idCompany:idCompanyMudi, link3D:server.URL_WEB ,color:color, zBtns:zIndexBtns,zModal:zIndexModal, ButtonsY:positionBtnsY});
     sendDataLayer({sku:skuNumber})
   };
+
+  MudiExperience({
+    tokenApi:'HGrkU6SqAtvcBtLdoD7t',
+    skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
+    idCompanyMudi:383,
+    color:'#9c3635',
+    zIndexModal:1000,
+  })

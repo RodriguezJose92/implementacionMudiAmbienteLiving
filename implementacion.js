@@ -279,4 +279,4 @@ setTimeout(()=>{
     color:'#9c3635',
     zIndexModal:1000,
   })
-},1500);
+},3000);

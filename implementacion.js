@@ -67,18 +67,29 @@ async function serverData ({
     containerPrincipalBtns.querySelector('.btnMudiAR').addEventListener('click',()=>{ createModalAR({color:color, idCompany:idCompany, sku:sku,zModal:zModal}) },false);
   
     if(window.innerWidth > 1100){
-      fatherContainer.appendChild(containerPrincipalBtns);
-    }else if( window.innerWidth >500 && window.innerWidth < 1100){
-      console.log('tablet')
-      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
-      fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
-    }else if( window.innerWidth <500){
-      console.log('mobile')
-      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
-      fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
-    };
 
-    
+      document.getElementById('containerBtnsMudi') ? (
+        document.getElementById('containerBtnsMudi').remove(),
+        fatherContainer.appendChild(containerPrincipalBtns)
+      ) : fatherContainer.appendChild(containerPrincipalBtns);
+
+    }else if( window.innerWidth >500 && window.innerWidth < 1100){
+
+      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
+      document.getElementById('containerBtnsMudi') ? (
+        document.getElementById('containerBtnsMudi').remove(),
+        fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano)
+      ): fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano)
+      
+    }else if( window.innerWidth <500){
+
+      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
+      document.getElementById('containerBtnsMudi') ? (
+        document.getElementById('containerBtnsMudi').remove(),
+        fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano)
+      ): fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano)
+
+    };    
   
     setTimeout(()=>{
       const tool = document.querySelector('.showTooltipInit');

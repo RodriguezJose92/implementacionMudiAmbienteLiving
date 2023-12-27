@@ -1,4 +1,4 @@
-/* Petición SeverMudi probando */
+/* Petición SeverMudi probando desk */
 async function serverData ({
   token = undefined,
   sku = undefined

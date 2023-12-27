@@ -292,4 +292,4 @@ MudiExperience({
 })
 },3000);
 
-console.log('acutalizando');
+console.log('acutalizando para nosotros');

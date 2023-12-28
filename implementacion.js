@@ -282,14 +282,18 @@ async function MudiExperience ({
   sendDataLayer({sku:skuNumber})
 };
 
-setTimeout(()=>{
-MudiExperience({
-  tokenApi:'HGrkU6SqAtvcBtLdoD7t',
-  skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
-  idCompanyMudi:383,
-  color:'#9c3635',
-  zIndexModal:1000,
-})
-},3000);
 
-console.log('logro conseguido.')
+const intervalButtons = setInterval(()=>{
+  if(!document.querySelector('.vtex-product-identifier-0-x-product-identifier__value')){
+    return
+  }else{
+    clearInterval(intervalButtons);
+    MudiExperience({
+      tokenApi:'HGrkU6SqAtvcBtLdoD7t',
+      skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
+      idCompanyMudi:383,
+      color:'#9c3635',
+      zIndexModal:1000,
+    });
+  }
+},1000)

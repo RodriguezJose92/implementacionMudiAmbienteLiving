@@ -1,0 +1,17 @@
+name: Release to jsDelivr
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Release to jsDelivr
+        run: |
+          curl -X PURGE https://purge.jsdelivr.net/npm/RodriguezJose92/implementacionMudiAmbienteLiving@latest

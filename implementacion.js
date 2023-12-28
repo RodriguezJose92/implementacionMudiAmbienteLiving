@@ -1,4 +1,4 @@
-/*Petición SeverMudi probando re versioanmiento*/
+/*Petición SeverMudi última versión*/
 async function serverData ({
   token = undefined,
   sku = undefined
@@ -292,4 +292,4 @@ MudiExperience({
 })
 },3000);
 
-console.log('acutalizando para nosotros');
+console.log('logro conseguido.')

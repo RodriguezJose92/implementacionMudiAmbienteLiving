@@ -282,12 +282,13 @@ async function MudiExperience ({
   sendDataLayer({sku:skuNumber})
 };
 
-
-const intervalButtons = setInterval(()=>{
-  if(!document.querySelector('.vtex-product-identifier-0-x-product-identifier__value')){
-    return
-  }else{
-    clearInterval(intervalButtons);
+let listScripts = document.querySelectorAll('script');
+const cdn = 'https://cdn.jsdelivr.net/gh/RodriguezJose92/implementacionMudiAmbienteLiving@latest/implementacion.js' ;
+let elementSelect = null;
+for(index=0;index<listScripts.length; index++){
+  
+  elementSelect = listScripts[index];
+  if(elementSelect.src==cdn){
     MudiExperience({
       tokenApi:'HGrkU6SqAtvcBtLdoD7t',
       skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
@@ -295,5 +296,20 @@ const intervalButtons = setInterval(()=>{
       color:'#9c3635',
       zIndexModal:1000,
     });
+  }else{
+    const intervalButtons = setInterval(()=>{
+      if(!document.querySelector('.vtex-product-identifier-0-x-product-identifier__value')){
+        return
+      }else{
+        clearInterval(intervalButtons);
+        MudiExperience({
+          tokenApi:'HGrkU6SqAtvcBtLdoD7t',
+          skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
+          idCompanyMudi:383,
+          color:'#9c3635',
+          zIndexModal:1000,
+        });
+      }
+    },1000)
   }
-},1000)
+};

@@ -282,7 +282,7 @@ async function MudiExperience ({
   sendDataLayer({sku:skuNumber})
 };
 
-let listScripts = document.querySelectorAll('script');
+listScripts = document.querySelectorAll('script');
 const cdn = 'https://cdn.jsdelivr.net/gh/RodriguezJose92/implementacionMudiAmbienteLiving@latest/implementacion.js' ;
 let elementSelect = null;
 for(index=0;index<listScripts.length; index++){

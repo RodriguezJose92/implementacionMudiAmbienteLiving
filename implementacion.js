@@ -298,7 +298,7 @@ async function MudiExperience ({
     tokenApi:'HGrkU6SqAtvcBtLdoD7t',
     skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
     containerBtns:document.querySelector('.vtex-store-components-3-x-productImage .relative'),
-    idCompanyMudi:0,
+    idCompanyMudi:383,
     color:'#2889e9',
     zIndexModal:1000,
   })

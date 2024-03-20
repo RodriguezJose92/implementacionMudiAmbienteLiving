@@ -233,7 +233,7 @@ function sendDataLayer({sku}){
 
   document.querySelector('div.ambientegourmet-components-2-x-containerLayout.ambientegourmet-components-2-x-containerLayout--pdp-buy-now-container > button > div').addEventListener('click',()=>{
     dataLayer.push({
-      event:'Evento de "comprar ahora" - intención de compra Mudi',
+      event:'Intencion de compra Mudi',
       valorMudi:1,
       sku:sku,
       categoria:document.querySelectorAll('.ambientegourmet-breadcrumb-2-x-link')[2] ? document.querySelectorAll('.ambientegourmet-breadcrumb-2-x-link')[2].innerHTML : 'null',

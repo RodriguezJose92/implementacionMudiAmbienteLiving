@@ -1,4 +1,4 @@
-class sendData{  
+class sendDataMudi{  
 
   constructor(){
       
@@ -289,7 +289,7 @@ class sendData{
   };
 
 };
-const mudiData = new sendData();
+const mudiData = new sendDataMudi();
 /** ✔️ start timer Mudi */
 mudiData.timeSesion();
 

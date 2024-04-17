@@ -595,6 +595,7 @@ async function MudiExperience ({
   
   await mudiData.consultTest();
 
+  /** Render buttons */
   if (mudiData.typeTest=='A'){
     /** Una vez tengamos la respuesta positiva creamos los estilos generales y los botones */
     createStyles({idCompany:idCompanyMudi});
@@ -602,9 +603,11 @@ async function MudiExperience ({
     sendDataLayer({sku:skuNumber});
 
     /** prendemos el pixel de Mudi */
-    mudiData.pixelOn(skuNumber)
+    mudiData.pixelOn(skuNumber);
+    mudiData.eventView();
   }
 
+  /** Hidden buttons */
   if(mudiData.typeTest=='B'){
     /** prendemos el pixel de Mudi */
     mudiData.pixelOn(skuNumber)

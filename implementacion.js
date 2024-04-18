@@ -176,7 +176,7 @@ function createModalAR({color,idCompany,sku,zModal}){
             <div class="secondContentMudi">
                 <h3 class="stepTitleMudi qrTitlePart"> Escanea el código QR para ver el producto en realidad aumentada.</h3>
                 <div class="containerQRMudi">
-                  <img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https%3A%2F%2Fviewer.mudi.com.co%2Fv1%2Far%2F%3Fid%3D${idCompany}%26sku%3D${sku}" class="codeQRMudi">
+                  <img src="https://viewer.mudi.com.co/v1/qr/?id=${idCompany}&sku=${sku}" class="codeQRMudi">
                 </div>
                 <a class="hrefMudiAR" href="https://mudi.com.co" target="_blank">
                   <img class="powerByMudiAR" src="https://mudi.com.co/Assets/SVG/powerByMudi.webp" type="image/webp" alt="Power By Mudi">
